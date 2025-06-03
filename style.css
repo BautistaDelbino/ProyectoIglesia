@@ -40,7 +40,7 @@ body, html {
   display: block;
 
   /* Imagen de fondo para las páginas */
-  background-image: url('hoja.jpeg');
+  background-image: url('img/hoja.jpeg');
   background-size: cover;          /* Ajusta la imagen para cubrir todo */
   background-position: center;     /* Centrado de la imagen */
   background-repeat: no-repeat;    /* No repetir la imagen */
