@@ -1,0 +1,143 @@
+/* Reset básico de estilos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Importar fuente Merriweather desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+/* Estilos generales del body */
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Merriweather', serif;  /* Tipografía serif legible y elegante */
+  background-color: #111;
+  color: black;                         /* Texto negro para buen contraste */
+}
+
+/* Contenedor principal del libro */
+#book {
+  width: 90vw;                /* Ancho relativo a la pantalla */
+  height: 80vh;               /* Altura relativa */
+  margin: 10vh auto;          /* Centrado vertical y horizontal */
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  touch-action: manipulation; /* Permitir interacción táctil */
+}
+
+/* Cada página ocupa todo el contenedor */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 1.5rem;
+  overflow-y: auto;          /* Scroll vertical si contenido excede */
+  border-radius: 12px;
+  display: block;
+
+  /* Imagen de fondo para las páginas */
+  background-image: url('hoja.jpeg');
+  background-size: cover;          /* Ajusta la imagen para cubrir todo */
+  background-position: center;     /* Centrado de la imagen */
+  background-repeat: no-repeat;    /* No repetir la imagen */
+  /* Para que el texto sea legible, agregamos un fondo semitransparente */
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+}
+
+/* Contenido de texto de cada página */
+.page .content {
+  color: black;           /* Texto negro */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Espacio entre párrafos */
+.page .content p {
+  margin-bottom: 1rem;
+}
+
+/* Imagen flotante a la izquierda con separación */
+.content img.float-left {
+  float: left;
+  margin: 0 1rem 1rem 0;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Imagen flotante a la derecha con separación */
+.content img.float-right {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Página oculta (si querés implementar fade o transición) */
+.page.hidden {
+  display: none;
+}
+
+/* =================== */
+/* MEDIA QUERIES       */
+/* =================== */
+
+/* Dispositivos chicos: ancho hasta 360px (smartphones pequeños) */
+@media (max-width: 360px) {
+  #book {
+    width: 98vw;              /* Más ancho para aprovechar el espacio */
+    height: 85vh;             /* Un poco más alto */
+    margin: 7vh auto;
+  }
+  .page .content {
+    font-size: 0.9rem;        /* Texto un poco más pequeño */
+  }
+  /* Imagen ocupa menos ancho para que el texto se lea bien */
+  .content img.float-left,
+  .content img.float-right {
+    max-width: 40%;
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+}
+
+/* Dispositivos medianos: ancho entre 361px y 768px (smartphones estándar) */
+@media (min-width: 361px) and (max-width: 768px) {
+  #book {
+    width: 95vw;              /* Casi todo el ancho */
+    height: 82vh;
+    margin: 8vh auto;
+  }
+  .page .content {
+    font-size: 1rem;          /* Tamaño base */
+  }
+  .content img.float-left,
+  .content img.float-right {
+    max-width: 45%;
+    margin: 0 1rem 1rem 1rem;
+  }
+}
+
+/* Dispositivos grandes: ancho entre 769px y 1024px (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #book {
+    width: 85vw;
+    height: 80vh;
+    margin: 10vh auto;
+  }
+  .page .content {
+    font-size: 1.1rem;        /* Texto un poco más grande */
+  }
+  .content img.float-left,
+  .content img.float-right {
+    max-width: 50%;
+    margin: 0 1rem 1rem 1rem;
+  }
+}
