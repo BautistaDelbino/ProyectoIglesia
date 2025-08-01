@@ -11,12 +11,14 @@ const pages = [
     bgColor: '#6C5B7B',
   image1Side: 'left',
   image1: 'img/iglesia1.jpeg',
-  image1Width: '40%',
+  image1Width: '60%',
   image2Side: 'right',
   image2: '',
   image2Width: '40%',
-    textTop: 'Fundación: El 8 de julio de 1888, la fecha de fundación de la Congregación Evangélica de Humboldt, y el día 16 de julio comienza funcionar la escuela Estos acontecimientos hablan de la decisión de las familias protestantes para mejorar la instrucción de sus hijos,',
-    textMiddle: 'con una clara visión de que la religión y la educación son las mejores herramientas para entenderse y trabajar en ésta, para ellos, nueva patria por adopción.',
+  title: 'Fundación',
+    textTop: 'La fecha de fundación de la Congregación Evangélica de Humboldt fue el 8 de julio de 1888, y el día 16 de julio comienza funcionarla escuela. Estos acontecimientos hablan de la decisión de las familias protestantes para mejorar la instrucción de sus hijos, con una clara visión de que la religión y la educación son las mejores herramientas para entenderse y trabajar en esta.',
+    textMiddle: '',
+    subtitle: 'Culto',
     textBottom: 'El presidente de la primera Comisión Directiva fue Santiago Deppeler. El pastor Forster venía a celebrar los cultos, pero en casa de familias, porque no existía un lugar físico determinado para ello.',
   },
 
@@ -64,7 +66,7 @@ const pages = [
     bgColor: '#355C7D',
     image1Side: 'left',
     image1: 'img/damas.jpeg',
-    image1Width: '40%',
+    image1Width: '100%',
     image2Side: 'right',
     image2: '',
     image2Width: '40%',
@@ -139,8 +141,10 @@ function renderPage(index) {
       `;
     }
 
-    textDiv.innerHTML = `
+   textDiv.innerHTML = `
+  ${pageData.title ? `<h1 class="page-title">${pageData.title}</h1>` : ''}
   <p>${pageData.textTop}</p>
+  ${pageData.subtitle ? `<h3 class="page-subtitle">${pageData.subtitle}</h3>` : ''}
   ${imagesHTML}
   <p>${pageData.textMiddle}</p>
   <p>${pageData.textBottom}</p>
