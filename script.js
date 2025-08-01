@@ -51,8 +51,8 @@ const pages = [
 {
     bgColor: '#355C7D',
     imageSide: 'right',
-    image: ' ',
-    imageWidth: '50%',
+    image: 'img/damas.jpeg',
+    imageWidth: '100%',
     textTop: '22 de marzo de 1928, se formó la primera comisión directiva de la Sociedad de Damas Evangélicas, el rol de estas mujeres era muy impor-tante, se preocupaban por las distintas áreas de los ministerios de la iglesia, como por ejemplo la catequesis, incluyendo clases de confirmación, escuela dominical, obligaciones de los cantantes del Coro de la Iglesia, la escuela de alemán.',
     textMiddle: 'Ellas eran quienes recaudaban fondos para cubrir estos gastos, además fondos para el sostenimiento de la iglesia y mantenimiento de las instalaciones. Damas, junto con la familia del pastor Johan Vöhringer, celebraron Navidad y en ese culto fue la primera Fiesta del Arboli-to, que hasta la actualidad se sigue con la tradición de adornar un árbol natural para dicha celebración.',
     textBottom: 'Uno de sus grandes anhelos fue construir un espacio para reuniones y demás actividades relacionadas con la iglesia. El 8 de julio de 1988, recordando el primer Centenario de la Comunidad Evan-gélica, se inauguró el salón parroquial,'
@@ -61,9 +61,9 @@ const pages = [
 {
     bgColor: '#355C7D',
     imageSide: 'right',
-    image: 'imagen2.jpeg',
+    image: '',
     imageWidth: '50%',
-    textTop: 'Otra página comienza...',
+    textTop: '',
     textMiddle: 'Texto central que acompaña...',
     textBottom: 'Y una conclusión o nota final...'
   },
