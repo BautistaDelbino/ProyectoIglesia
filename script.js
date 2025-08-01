@@ -140,7 +140,7 @@ function renderPage(index) {
           style="width: ${pageData.image2Width || '45%'};">
       `;
     }
-
+    //sector de orden de paginas
    textDiv.innerHTML = `
   ${pageData.title ? `<h1 class="page-title">${pageData.title}</h1>` : ''}
   <p>${pageData.textTop}</p>
