@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Libro Interactivo</title>
-  <!-- Enlace a la hoja de estilos -->
-  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Contenedor principal del libro -->
-  <div id="book">
-    <!-- Las paginas se insertaran dinamicamente desde JS -->
+  <div id="book"></div>
+
+  <div id="tutorialModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 class="tutorial-heading">¿Cómo usar el libro?</h2>
+      <div class="tutorial-phone">
+        <div class="half left"><span>&larr; Retroceder</span></div>
+        <div class="half right"><span>Avanzar &rarr;</span></div>
+      </div>
+      <div class="scroll-hint">⬆Desliza hacia arriba para leer ⬇</div>
+    </div>
   </div>
 
-  <!-- Enlace al script que controla el libro -->
   <script src="script.js"></script>
 </body>
 </html>

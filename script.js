@@ -96,7 +96,7 @@ const pages = [
 {
     bgColor: '#355C7D',
     image1Side: 'left',
-    image1: 'diaconia.jpeg',
+    image1: 'img/diaconia.jpeg',
     image1Width: '100%',
     image2Side: 'right',
     image2: '',
@@ -107,14 +107,32 @@ const pages = [
     textBottom: 'Damos gracias a Dios por el amor hacia el prójimo el cual es el mensaje de nuestro Señor Jesucristo.'
   },
   // CONTRATAPA
+
   {
     fullImage: true,
-    backgroundClass: 'bg-contratapa'
+    backgroundClass: 'bg-contratapa',
+    footerImage: 'img/mapa.png'
   }
+  
 ];
 
 let currentPage = 0;
 const book = document.getElementById('book');
+
+// Precargar imágenes
+const preloadImages = () => {
+  pages.forEach(page => {
+    if (page.image1) {
+      const img1 = new Image();
+      img1.src = page.image1;
+    }
+    if (page.image2) {
+      const img2 = new Image();
+      img2.src = page.image2;
+    }
+  });
+};
+preloadImages();
 
 // Renderizar pagina actual
 function renderPage(index) {
@@ -122,18 +140,34 @@ function renderPage(index) {
 
   const pageData = pages[index];
   const page = document.createElement('div');
-  page.classList.add('page');
+page.classList.add('page', 'page-transition');
 
   // Página de imagen completa
   if (pageData.fullImage && pageData.backgroundClass) {
     page.classList.add(pageData.backgroundClass);
-
-    const filler = document.createElement('div');
-    filler.style.height = '100%';
-    filler.style.width = '100%';
-    page.appendChild(filler);
-
-  } else {
+  
+    const wrapper = document.createElement('div');
+    wrapper.style.height = '100%';
+    wrapper.style.width = '100%';
+    wrapper.style.position = 'relative';
+  
+    // COLOCAR IMAGENE EN LA CONTRATAPA
+    if (pageData.footerImage) {
+      const footerImg = document.createElement('img');
+      footerImg.src = pageData.footerImage;
+      footerImg.alt = "Imagen contratapa";
+      footerImg.style.position = 'absolute';
+      footerImg.style.bottom = '60px'; // puedes ajustar el margen inferior
+      footerImg.style.left = '50%';
+      footerImg.style.transform = 'translateX(-50%)';
+      footerImg.style.maxWidth = '52%'; // ajusta el tamaño
+      footerImg.style.height = 'auto';
+  
+      wrapper.appendChild(footerImg);
+    }
+  
+    page.appendChild(wrapper);
+  }else {
     page.style.backgroundColor = pageData.bgColor || '#fff';
 
     const textDiv = document.createElement('div');
@@ -197,3 +231,23 @@ function goToPage(delta) {
 
 // Cargar primera pagina
 renderPage(currentPage);
+
+// Mostrar modal al cargar
+window.addEventListener('load', () => {
+  const modal = document.getElementById('tutorialModal');
+  const closeBtn = document.getElementById('closeModal');
+
+  modal.style.display = 'flex';
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  // Cerrar si se hace clic fuera del contenido
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+});
+
