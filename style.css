@@ -49,6 +49,13 @@ body, html {
 .page.bg-contratapa {
   background-image: url('img/contratapa.png');
 }
+/*Para que no se devorden/ corten las imagenes utilizadas*/
+.page.bg-tapa,
+.page.bg-contratapa {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 /* Contenido */
 .page .content {
@@ -248,9 +255,9 @@ body, html {
   50% { opacity: 1; }
 }
 
-/* ============================= */
-/*        MEDIA QUERIES          */
-/* ============================= */
+/* ======================================= */
+/*              MEDIA QUERIES              */
+/* ======================================= */
 
 /*Dispositivos pequeños */
 @media (max-width: 365px) {

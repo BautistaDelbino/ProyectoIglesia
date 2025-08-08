@@ -86,10 +86,10 @@ const pages = [
     image1Width: '50%',
     image2Side: 'right',
     image2: 'img/escuela2.jpeg',
-    image2Width: '80%',
+    image2Width: '60%',
     title: 'Escuelita Bíblica',
-    textTop: 'La educación cristiana es uno de los pilares importantes para el crecimiento de la fe. Un espacio dedicado a nuestros pequeños y adolescentes. Con ellos compartimos encuentros semanales, donde después de cantos, oraciones, ofrendas, se los divide por edades para compartir y',
-    textMiddle: 'aprender de las historias bíblicas como así también distintos temas que tienen que ver con la vida cotidiana. Ellos participan de encuentros, campamentos y cultos especiales. Estamos llamados a compartir la fe de generación en generación y así cumplir con el mandato de nuestro señor Jesús.',
+    textTop: 'La educación cristiana es uno de los pilares importantes para el crecimiento de la fe. Un espacio dedicado a nuestros pequeños y adolescentes. Con ellos compartimos encuentros semanales, donde después de cantos, oraciones, ofrendas, se los divide por edades para compartir ',
+    textMiddle: ' y aprender de las historias bíblicas como así también distintos temas que tienen que ver con la vida cotidiana. Ellos participan de encuentros, campamentos y cultos especiales. Estamos llamados a compartir la fe de generación en generación y así cumplir con el mandato de nuestro señor Jesús.',
     textBottom: ''
   },
   // Pagina 7
@@ -112,6 +112,7 @@ const pages = [
     fullImage: true,
     backgroundClass: 'bg-contratapa',
     footerImage: 'img/mapa.png'
+    
   }
   
 ];
@@ -153,18 +154,33 @@ page.classList.add('page', 'page-transition');
   
     // COLOCAR IMAGENE EN LA CONTRATAPA
     if (pageData.footerImage) {
+      const link = document.createElement('a');
+      link.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
+      link.target = '_blank';
+      link.style.position = 'absolute';
+      link.style.bottom = '100px';
+      link.style.left = '50%';
+      link.style.transform = 'translateX(-50%)';
+      link.style.maxWidth = '43%';
+      link.style.height = 'auto';
+      link.style.display = 'block'; // Asegura que se vea como bloque
+      link.style.zIndex = '1000';   // Asegura que esté por encima de otros elementos
+    
       const footerImg = document.createElement('img');
       footerImg.src = pageData.footerImage;
       footerImg.alt = "Imagen contratapa";
-      footerImg.style.position = 'absolute';
-      footerImg.style.bottom = '60px'; // puedes ajustar el margen inferior
-      footerImg.style.left = '50%';
-      footerImg.style.transform = 'translateX(-50%)';
-      footerImg.style.maxWidth = '52%'; // ajusta el tamaño
+      footerImg.style.width = '100%';
       footerImg.style.height = 'auto';
-  
-      wrapper.appendChild(footerImg);
-    }
+      footerImg.style.pointerEvents = 'auto'; // Permite clics
+    
+      // Evita que el clic en el link propague hacia el fondo
+      link.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    
+      link.appendChild(footerImg);
+      wrapper.appendChild(link);
+    }    
   
     page.appendChild(wrapper);
   }else {
