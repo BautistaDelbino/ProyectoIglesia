@@ -104,48 +104,14 @@ body, html {
   text-align: center;
   font-family: 'Georgia', serif;
 }
-
-/* Página oculta */
-.page.hidden {
-  display: none;
+.page-footer-text {
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Georgia', serif;
+  color: #222;
+  margin-bottom: 20px;
+  
 }
-
-/* Media queries */
-@media (max-width: 365px) {
-  #book {
-    width: 98vw;
-    height: 80vh;
-    margin: 1rem auto;
-  }
-
-  .page .content {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .content img.float-left,
-  .content img.float-right {
-    float: none;
-    display: block;
-    max-width: 100%;
-    margin: 0 auto 1rem auto;
-  }
-}
-
-/* Orientación */
-@media screen and (orientation: landscape) {
-  #book {
-    height: 65vh;
-  }
-
-  .content img.float-left,
-  .content img.float-right {
-    max-width: 40%;
-  }
-}
-
-/*  ANIMACIÓN DEL TUTORIAL */
-
 /* Animación de entrada */
 .page-transition {
   animation: slideIn 0.4s ease forwards;
