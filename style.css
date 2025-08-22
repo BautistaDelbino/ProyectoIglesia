@@ -255,6 +255,28 @@ body, html {
   50% { opacity: 1; }
 }
 
+/* Imagen del mapa en la contratapa */
+
+.page.bg-contratapa .footer-image-container {
+  position: absolute;
+  bottom: 50px; /* Espaciado desde el fondo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 175px;
+  z-index: 1000;
+  display: block;
+  text-align: center;
+}
+
+.page.bg-contratapa .footer-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
 /* ======================================= */
 /*              MEDIA QUERIES              */
 /* ======================================= */

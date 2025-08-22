@@ -106,6 +106,20 @@ const pages = [
     textMiddle: ' Con el transcurso de los años se lo conoce como "el rope-rito". En este espacio se realiza la entrega de ropa, calzado, útiles escolares, leche en polvo y otros elementos de uso cotidia no. Podemos hacer esta tarea gracias a los aportes y donaciones de la comunidad.',
     textBottom: 'Damos gracias a Dios por el amor hacia el prójimo el cual es el mensaje de nuestro Señor Jesucristo.'
   },
+  // Pagina 8
+{
+    bgColor: '#355C7D',
+    image1Side: 'left',
+    image1: 'img/Casita Nazareth.jpeg',
+    image1Width: '80%',
+    image2Side: 'right',
+    image2: 'img/colashnenes.jpeg',
+    image2Width: '100%',
+    title: 'Casita Nazareth',
+    textTop: ' En ella se realizan las actividades de Escuelita Bíblica los días sábados y luego se destina a un proyecto que comenzó a funcionar en Noviembre del 2024',
+    textMiddle: 'ofrece talleres gratuitos para niños de edad escolar q tienen algunas dificultades de participar de actividades extra escolares y facilitar así la socialización y el desarrollo de su estima',
+    textBottom: 'Para ello se les brindan talleres como Juegoteca, Huerta y Jardín, cocina, música y manualidades'
+  },
   // CONTRATAPA
 
   {
@@ -116,6 +130,8 @@ const pages = [
   }
   
 ];
+
+
 
 let currentPage = 0;
 const book = document.getElementById('book');
@@ -154,34 +170,27 @@ page.classList.add('page', 'page-transition');
   
     // COLOCAR IMAGENE EN LA CONTRATAPA
     if (pageData.footerImage) {
-      const link = document.createElement('a');
-      link.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
-      link.target = '_blank';
-      link.style.position = 'absolute';
-      link.style.bottom = '100px';
-      link.style.left = '50%';
-      link.style.transform = 'translateX(-50%)';
-      link.style.maxWidth = '43%';
-      link.style.height = 'auto';
-      link.style.display = 'block'; // Asegura que se vea como bloque
-      link.style.zIndex = '1000';   // Asegura que esté por encima de otros elementos
-    
-      const footerImg = document.createElement('img');
-      footerImg.src = pageData.footerImage;
-      footerImg.alt = "Imagen contratapa";
-      footerImg.style.width = '100%';
-      footerImg.style.height = 'auto';
-      footerImg.style.pointerEvents = 'auto'; // Permite clics
-    
-      // Evita que el clic en el link propague hacia el fondo
-      link.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-    
-      link.appendChild(footerImg);
-      wrapper.appendChild(link);
-    }    
-  
+  const container = document.createElement('div');
+  container.className = 'footer-image-container';
+
+  const link = document.createElement('a');
+  link.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
+  link.target = '_blank';
+
+  const footerImg = document.createElement('img');
+  footerImg.src = pageData.footerImage;
+  footerImg.alt = "Imagen contratapa";
+  footerImg.style.pointerEvents = 'auto'; // Permitir clics en la imagen
+
+  // Evita que el clic en el link se propague hacia el fondo
+  link.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  link.appendChild(footerImg);
+  container.appendChild(link);
+  wrapper.appendChild(container);
+}
     page.appendChild(wrapper);
   }else {
     page.style.backgroundColor = pageData.bgColor || '#fff';
