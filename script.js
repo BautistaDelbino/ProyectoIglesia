@@ -8,54 +8,49 @@ const pages = [
 
   // Pagina 1
   {
-    bgColor: '#6C5B7B',
   image1Side: 'left',
   image1: 'img/iglesia1.jpeg',
   image1Width: '60%',
   image2Side: 'right',
-  image2: '',
-  image2Width: '40%',
+  image2: 'img/iglesia2.jpeg',
+  image2Width: '60%',
   title: 'Fundación',
-    textTop: 'La fecha de fundación de la Congregación Evangélica de Humboldt fue el 8 de julio de 1888, y el día 16 de julio comienza funcionarla escuela. Estos acontecimientos hablan de la decisión de las familias protestantes para mejorar la instrucción de sus hijos, con una clara visión de que la religión y la educación son las mejores herramientas para entenderse y trabajar en esta.',
-    textMiddle: '',
+    textTop: '',
+    textMiddle: 'La fecha de fundación de la Congregación Evangélica de Humboldt fue el 8 de julio de 1888. El presidente de la primera Comisión Directiva fue Santiago Deppeler. ',
+    textBottom: 'El pastor Forster venía de la comunidad de Esperanza a celebrar los cultos, pero en casa de familias, porque no existía un lugar físico determinado para ello.',
     subtitle: 'Culto',
-    textBottom: 'El presidente de la primera Comisión Directiva fue Santiago Deppeler. El pastor Forster venía a celebrar los cultos, pero en casa de familias, porque no existía un lugar físico determinado para ello.',
    footerText: '',
   },
 
   //Pagina 2
   {
-    bgColor: '#355C7D',
   image1Side: 'left',
-  image1: 'img/organo.jpeg',
-  image1Width: '80%',
+  image1: 'img/casa.jpeg',
+  image1Width: '100%',
   image2Side: 'right',
   image2: '',
-  image2Width: '40%',
   title: 'El Templo',
-    textTop: 'Se levanta la construcción en tiempo récord, ya que en el acta del 14-3 de 1889 se hace mención del organista proposición hecha a éste por el término de 3 meses tocar el órgano en el Templo. Este Templo humilde, levantado con dedicación, entusiasmo y alegría, fue el guardián de la Palabra del Señor y el lugar al que concurrían las familias para dar testimonio de su fe y renovar sus esperanzas',
-    textMiddle: 'Los encuentros con la Santa Cena y los sermones de los Pastores, marcaban la senda que no se debía abandonar. El viejo templo fue testigo de cultos, bautismos, reuniones de comisiones y asambleas, confirmaciones, ensayos de coro, navidades, y toda otra actividad.',
-    textBottom: '',
-    footerText: 'asd',
+    textTop: 'Se levanta la construcción en tiempo récord. Este Templo humilde, levantado con dedicación, entusiasmo y alegría, fue el guardián de la Palabra del Señor y el lugar al que concurrían las familias para dar testimonio de su fe y renovar sus esperanzas',
+    textMiddle: '',
+    textBottom: 'Los encuentros con la Santa Cena y los sermones de los Pastores, marcaban la senda que no se debía abandonar. El viejo templo fue testigo de cultos, bautismos, reuniones de comisiones y asambleas, confirmaciones, ensayos de coro, navidades, y toda otra actividad.',
+    footerText: '',
   },
   // Pagina 3
-{
-    bgColor: '#355C7D',
+  {
     image1Side: 'left',
     image1: 'img/Peter Bartning.jpg',
-    image1Width: '40%',
+    image1Width: '50%',
     image2Side: 'right',
     image2: '',
     image2Width: '40%',
     title: 'Peter Bartning',
-    textTop: 'En mayo de 1937, se nombra una comisión constructora y se acepta que un arquitecto alemán se haga cargo de la nueva obra. Se trata del joven Peter Bartning de 24 años, que originario de Berlín viaja a bordo de un barco, el 19 de noviembre de 1937',
-    textMiddle: 'A esta obra tan esperada se decide colocar la piedra fundamental, y este acto trascendental ocurrió el 15 de abril, viernes santo de ese 1938, con mucho frío y lluvia. Con fecha 4 de agosto de 1938, el joven Arquitecto Peter Bartning entrega una carta recibo, donde da por concluida la obra.',
-    textBottom: 'Se decide en reunión, que la inauguración se realice en el mes de octubre y se festejen también los 50 años de la Congregacion.',
+    textTop: 'En mayo de 1937, se nombra una comisión constructora del nuevo templo y se acepta que un arquitecto alemán se haga cargo de la nueva obra. Se trata del joven Peter Bartning de 24 años, que originario de Berlín viaja a bordo de un barco, el 19 de noviembre de 1937',
+    textMiddle: 'El 15 de abril, viernes santo de ese 1938, con mucho frío y lluvia es colocada la piedra fundamental. El 4 de agosto de 1938, el joven Arquitecto Peter Bartning entrega una carta recibo, donde da por concluida la obra.',
+    textBottom: 'Se decide en reunión, que la inauguración se realice en el mes de octubre festejándose también los 50 años de la Congregación.',
     footerText: '',
   },
   // Pagina 4
 {
-    bgColor: '#355C7D',
     image1Side: 'left',
     image1: 'img/campanario.jpeg',
     image1Width: '40%',
@@ -63,14 +58,12 @@ const pages = [
     image2: '',
     image2Width: '40%',
     title: 'Campanario',
-    textTop: 'culto de inauguración del día 23 de octubre de 1938, La nueva construcción tiene campana-110 pero no tiene campanas. Es entonces que comienza un largo trámite que duraria nada menos que 10 años. ',
-    textMiddle: 'Se reciben además aportes de la Comunidad Evangélica de Esperanza y la Comisión de Fomento. Con la venta de los materiales de la demolición del Antiguo Templo, se cubre la deuda total, demostrando así que "nada se pierde todo se transforma" La energía de paredes y techos, las risas, cantos y llantos de que estaban impregnados, no se fueron con los carros que llevaban los productos de la demolición.',
-    textBottom: 'Quedaron acá para siempre en estos testigos musicales que dan sus notas al aire, diciendo "somos aquellos que fuimos y seremos en la historia y el recuerdo". El 12 de noviembre de 1950 fueron consagradas las campanas. En mayo de 1959, se radica el Pastor Otto Vohringer con su tamilia',
-    footerText: '',
+    textTop: 'El Culto de inauguración fue el día 23 de octubre de 1938. La nueva iglesia tiene campanario pero no tiene campanas. Es entonces que comienza un largo trámite que duraria nada menos que 10 años para adquirir las mismas. ',
+    textMiddle: 'Se reciben aportes de la Comunidad Evangélica de Esperanza y la Comisión de Fomento Local, para la compra de las 3 campanas, Esperanza, Fé y Caridad. Con la venta de los materiales de la demolición del Antiguo Templo, se cubre la deuda total, demostrando así que "nada se pierde todo se transforma" La energía de paredes y techos, las risas, cantos y llantos de que estaban impregnados, no se fueron con los carros que llevaban los productos de la demolición, sino que quedaron acá para siempre en estos testigos musicales que dan sus notas al aire, diciendo "somos aquellos que fuimos y seremos en la historia y el recuerdo". El 12 de noviembre de 1950 fueron consagradas las campanas. En mayo de 1959, se radica el primer pastor, señor Otto Vohringer con su familia.',
+    textBottom: '',
   },
   // Pagina 5
 {
-    bgColor: '#355C7D',
     image1Side: 'left',
     image1: 'img/damas.jpeg',
     image1Width: '100%',
@@ -78,29 +71,27 @@ const pages = [
     image2: '',
     image2Width: '40%',
     title: 'Damas Evangélicas',
-    textTop: '22 de marzo de 1928, se formó la primera comisión directiva de la Sociedad de Damas Evangélicas, su rol era fundamental, se preocupaban por las distintas áreas de los ministerios de la iglesia, como por ejemplo la catequesis, clases de confirmación, escuela dominical, Coro de la Iglesia, escuela de alemán.',
-    textMiddle: 'Ellas eran quienes recaudaban fondos para cubrir gastos, además para el sostenimiento de la iglesia y mantenimiento de las instalaciones. Damas, junto con la familia del pastor Johan Vöhringer, celebraron Navidad y en ese culto fue la primera Fiesta del Arbolito, que hasta la actualidad se sigue con la tradición de adornar un árbol natural.',
+    textTop: 'El 22 de marzo de 1928, se formó la primera comisión directiva de la Sociedad de Damas Evangélicas, su rol era fundamental, se preocupaban por las distintas áreas de los ministerios de la iglesia, como por ejemplo la catequesis, clases de confirmación, escuela dominical, Coro de la Iglesia, escuela de alemán.',
+    textMiddle: 'Ellas eran quienes recaudaban fondos para cubrir gastos, además para el sostenimiento de la iglesia y mantenimiento de las instalaciones. La sociedad de Damas, junto con la familia del pastor Johan Vöhringer, celebraron Navidad y en ese culto fue la primera Fiesta del Arbolito, que hasta la actualidad se sigue con la tradición de adornar un árbol natural.',
     textBottom: 'Uno de sus grandes anhelos fue construir un espacio para reuniones y demás actividades relacionadas con la iglesia. El 8 de julio de 1988, recordando el primer Centenario de la Comunidad Evangélica, se inauguró el salón parroquial',
     footerText: '',
   },
   // Pagina 6
 {
-    bgColor: '#355C7D',
     image1Side: 'left',
     image1: 'img/escuela.jpeg',
     image1Width: '50%',
     image2Side: 'right',
     image2: 'img/escuela2.jpeg',
-    image2Width: '60%',
+    image2Width: '45%',
     title: 'Escuelita Bíblica',
-    textTop: 'La educación cristiana es uno de los pilares importantes para el crecimiento de la fe. Un espacio dedicado a nuestros pequeños y adolescentes. Con ellos compartimos encuentros semanales, donde después de cantos, oraciones, ofrendas, se los divide por edades para compartir ',
-    textMiddle: ' y aprender de las historias bíblicas como así también distintos temas que tienen que ver con la vida cotidiana. Ellos participan de encuentros, campamentos y cultos especiales. Estamos llamados a compartir la fe de generación en generación y así cumplir con el mandato de nuestro señor Jesús.',
+    textTop: 'La educación cristiana es uno de los pilares importantes para el crecimiento de la fe. Un espacio dedicado a nuestros pequeños y adolescentes. Con ellos compartimos encuentros semanales, donde después de cantos, oraciones, ofrendas, se los divide por edades para aprender de las historias bíblicas como así también distintos temas que tienen que ver con la vida cotidiana.',
+    textMiddle: 'Ellos participan de encuentros, campamentos y cultos especiales. Estamos llamados a compartir la fe de generación en generación y así cumplir con el mandato de nuestro señor Jesús.',
     textBottom: '',
     footerText: '',
   },
   // Pagina 7
 {
-    bgColor: '#355C7D',
     image1Side: 'left',
     image1: 'img/diaconia.jpeg',
     image1Width: '100%',
@@ -108,33 +99,40 @@ const pages = [
     image2: '',
     image2Width: '',
     title: 'Grupo de Diaconía',
-    textTop: 'Como iglesia tenemos la misión de servir y acompañar a la gente. Es por eso que ante la necesidad económica de algunas familias nació la iniciativa de hacer algo concreto. La asistente social nos animó a iniciar un trabajo comunitario al cual se le llamó grupo de diaconía.',
-    textMiddle: ' Con el transcurso de los años se lo conoce como "el rope-rito". En este espacio se realiza la entrega de ropa, calzado, útiles escolares, leche en polvo y otros elementos de uso cotidia no. Podemos hacer esta tarea gracias a los aportes y donaciones de la comunidad.',
+    textTop: 'Como iglesia tenemos la misión de servir y acompañar a la gente. Es por eso que ante la necesidad económica de algunas familias nació la iniciativa de hacer algo concreto. La asistente social Cardozo Mirelly, en el año 2001, nos animó a iniciar un trabajo comunitario al cual se lo llamó grupo de diaconía, "EL ROPERITO".',
+    textMiddle: 'En este espacio se realiza la entrega de ropa, calzado, útiles escolares, leche en polvo y otros elementos de uso cotidiano. Podemos hacer esta tarea gracias a los aportes y donaciones de la comunidad.',
     textBottom: 'Damos gracias a Dios por el amor hacia el prójimo el cual es el mensaje de nuestro Señor Jesucristo.',
     footerText: '',
   },
   // Pagina 8
 {
-    bgColor: '#355C7D',
-    image1Side: 'left',
+    image1Side: 'right',
     image1: 'img/Casita Nazareth.jpeg',
     image1Width: '80%',
-    image2Side: 'right',
+    image2Side: 'left',
     image2: 'img/colashnenes.jpeg',
     image2Width: '100%',
     title: 'Casita Nazareth',
-    textTop: ' En ella se realizan las actividades de Escuelita Bíblica los días sábados y luego se destina a un proyecto que comenzó a funcionar en Noviembre del 2024',
-    textMiddle: 'ofrece talleres gratuitos para niños de edad escolar q tienen algunas dificultades de participar de actividades extra escolares y facilitar así la socialización y el desarrollo de su estima',
-    textBottom: 'Para ello se les brindan talleres como Juegoteca, Huerta y Jardín, cocina, música y manualidades',
-    footerText: 'av libertad 2179 tel: 3496 542002',
+    textTop: ' En ella se realizan las actividades de Escuelita Bíblica los días sábados y luego se destina a un proyecto que comenzó a funcionar en Noviembre del 2024 ofreciendo talleres gratuitos para niños de edad escolar que tienen alguna dificultad de participar en actividades extra escolares, y facilitar así, la socialización y el desarrollo de su estima.',
+    textMiddle: '',
+    textBottom: 'Para ello se les brindan talleres como Juegoteca, Huerta y Jardín, Cocina, Música y Manualidades.',
   },
   // CONTRATAPA
 
   {
-    fullImage: true,
-    backgroundClass: 'bg-contratapa',
-    footerImage: 'img/mapa.png'
-    
+  fullImage: true,
+  backgroundClass: 'bg-contratapa',
+  footerImage: 'img/mapa.png',
+  extraButtons: [
+    {
+      imgSrc: 'img/celular.png',
+      url: 'https://wa.me/3496542002',
+    },
+    {
+      imgSrc: 'img/mail.png',
+      url: 'mailto:com.humboldt.ie@gmail.com',
+    }
+  ]
   }
   
 ];
@@ -176,7 +174,7 @@ page.classList.add('page', 'page-transition');
     wrapper.style.width = '100%';
     wrapper.style.position = 'relative';
   
-    // COLOCAR IMAGENE EN LA CONTRATAPA
+    // COLOCAR IMAGENES EN LA CONTRATAPA
     if (pageData.footerImage) {
   const container = document.createElement('div');
   container.className = 'footer-image-container';
@@ -197,6 +195,30 @@ page.classList.add('page', 'page-transition');
 
   link.appendChild(footerImg);
   container.appendChild(link);
+  //botones de mail y cel
+if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
+  pageData.extraButtons.forEach(btn => {
+    const buttonLink = document.createElement('a');
+    buttonLink.href = btn.url;
+    buttonLink.target = '_blank';
+    buttonLink.className = 'extra-button';
+    buttonLink.style.pointerEvents = 'auto';
+
+    const img = document.createElement('img');
+    img.src = btn.imgSrc;
+    img.style.width = '30px';
+    img.style.height = 'auto';
+
+    buttonLink.appendChild(img);
+
+    buttonLink.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    container.appendChild(buttonLink);
+  });
+}
+
   wrapper.appendChild(container);
 }
     page.appendChild(wrapper);
@@ -214,7 +236,7 @@ page.classList.add('page', 'page-transition');
           src="${pageData.image1}" 
           alt="Imagen 1" 
           class="float-${pageData.image1Side || 'left'}" 
-          style="width: ${pageData.image1Width || '45%'};">
+          style="width: ${pageData.image1Width || '100%'};">
       `;
     }
     if (pageData.image2) {
@@ -223,16 +245,16 @@ page.classList.add('page', 'page-transition');
           src="${pageData.image2}" 
           alt="Imagen 2" 
           class="float-${pageData.image2Side || 'right'}" 
-          style="width: ${pageData.image2Width || '45%'};">
+          style="width: ${pageData.image2Width || '100%'};">
       `;
     }
     //sector de orden de paginas
    textDiv.innerHTML = `
   ${pageData.title ? `<h1 class="page-title">${pageData.title}</h1>` : ''}
   <p>${pageData.textTop}</p>
-  ${pageData.subtitle ? `<h3 class="page-subtitle">${pageData.subtitle}</h3>` : ''}
   ${imagesHTML}
   <p>${pageData.textMiddle}</p>
+  ${pageData.subtitle ? `<h3 class="page-subtitle">${pageData.subtitle}</h3>` : ''}
   <p>${pageData.textBottom}</p>
   ${pageData.footerText ? `<div class="page-footer-text">${pageData.footerText}</div>` : ''}
   <div style="clear: both;"></div>
