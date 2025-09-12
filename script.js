@@ -145,26 +145,22 @@ const pages = [
     textBottom: 'Ofreciendo talleres gratuitos para niños de edad escolar que tienen alguna dificultad de participar en actividades extra escolares, y facilitar así, la socialización y el desarrollo de su estima. Para ello se les brindan talleres como Juegoteca, Huerta y Jardín, Cocina, Música y Manualidades.',
   },
   // CONTRATAPA
-
   {
-  fullImage: true,
-  backgroundClass: 'bg-contratapa',
-  footerImage: 'img/mapa.png',
-  extraButtons: [
-    {
-      imgSrc: 'img/celular.png',
-      url: 'https://wa.me/3496542002',
-    },
-    {
-      imgSrc: 'img/mail.png',
-      url: 'mailto:com.humboldt.ie@gmail.com',
-    }
-  ]
+    fullImage: true,
+    backgroundClass: 'bg-contratapa',
+    footerImage: 'img/mapa.png',
+    extraButtons: [
+      {
+        imgSrc: 'img/celular.png',
+        url: 'https://wa.me/3496542002',
+      },
+      {
+        imgSrc: 'img/mail.png',
+        url: 'mailto:com.humboldt.ie@gmail.com',
+      }
+    ]
   }
-  
 ];
-
-
 
 let currentPage = 0;
 const book = document.getElementById('book');
@@ -186,76 +182,75 @@ preloadImages();
 
 // Renderizar pagina actual
 function renderPage(index) {
-  book.innerHTML = ''; // Limpiar
+  book.innerHTML = ''; // Limpiar contenido
 
   const pageData = pages[index];
   const page = document.createElement('div');
-page.classList.add('page', 'page-transition');
+  page.classList.add('page', 'page-transition');
 
-  // Página de imagen completa
+  // Si es una página con imagen completa de fondo (como tapa o contratapa)
   if (pageData.fullImage && pageData.backgroundClass) {
     page.classList.add(pageData.backgroundClass);
-  
+
     const wrapper = document.createElement('div');
     wrapper.style.height = '100%';
     wrapper.style.width = '100%';
     wrapper.style.position = 'relative';
-  
-    // COLOCAR IMAGENES EN LA CONTRATAPA
+
+    // --- CONTRATAPA: Mapa y botones ---
     if (pageData.footerImage) {
-  const container = document.createElement('div');
-  container.className = 'footer-image-container';
+      const container = document.createElement('div');
+      container.className = 'footer-content-container';
 
-  const link = document.createElement('a');
-  link.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
-  link.target = '_blank';
+      // Mapa
+      const mapContainer = document.createElement('div');
+      mapContainer.className = 'map-image-container';
 
-  const footerImg = document.createElement('img');
-  footerImg.src = pageData.footerImage;
-  footerImg.alt = "Imagen contratapa";
-  footerImg.style.pointerEvents = 'auto'; // Permitir clics en la imagen
+      const mapLink = document.createElement('a');
+      mapLink.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
+      mapLink.target = '_blank';
 
-  // Evita que el clic en el link se propague hacia el fondo
-  link.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
+      const footerImg = document.createElement('img');
+      footerImg.src = pageData.footerImage;
+      footerImg.alt = "Ubicación en el mapa";
 
-  link.appendChild(footerImg);
-  container.appendChild(link);
-  //botones de mail y cel
-if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
-  pageData.extraButtons.forEach(btn => {
-    const buttonLink = document.createElement('a');
-    buttonLink.href = btn.url;
-    buttonLink.target = '_blank';
-    buttonLink.className = 'extra-button';
-    buttonLink.style.pointerEvents = 'auto';
+      mapLink.appendChild(footerImg);
+      mapContainer.appendChild(mapLink);
 
-    const img = document.createElement('img');
-    img.src = btn.imgSrc;
-    img.style.width = '30px';
-    img.style.height = 'auto';
+      // Botones extra
+      const buttonsContainer = document.createElement('div');
+      buttonsContainer.className = 'extra-buttons-container';
 
-    buttonLink.appendChild(img);
+      if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
+        pageData.extraButtons.forEach(btn => {
+          const buttonLink = document.createElement('a');
+          buttonLink.href = btn.url;
+          buttonLink.target = '_blank';
+          buttonLink.className = 'extra-button';
 
-    buttonLink.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
+          const img = document.createElement('img');
+          img.src = btn.imgSrc;
+          img.alt = "Botón extra";
 
-    container.appendChild(buttonLink);
-  });
-}
+          buttonLink.appendChild(img);
+          buttonsContainer.appendChild(buttonLink);
+        });
+      }
 
-  wrapper.appendChild(container);
-}
+      container.appendChild(mapContainer);
+      container.appendChild(buttonsContainer);
+      wrapper.appendChild(container);
+    }
+
     page.appendChild(wrapper);
-  }else {
+  } else {
+    // Páginas con contenido
     page.style.backgroundColor = pageData.bgColor || '#fff';
 
     const textDiv = document.createElement('div');
     textDiv.className = 'content';
 
-    // Crear imágenes HTML (máximo 2)
+    // Imágenes dentro de contenido
     let imagesHTML = '';
     if (pageData.image1) {
       imagesHTML += `
@@ -275,17 +270,18 @@ if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
           style="width: ${pageData.image2Width || '100%'};">
       `;
     }
-    //sector de orden de paginas
-   textDiv.innerHTML = `
-  ${pageData.title ? `<h1 class="page-title">${pageData.title}</h1>` : ''}
-  <p>${pageData.textTop}</p>
-  ${imagesHTML}
-  <p>${pageData.textMiddle}</p>
-  ${pageData.subtitle ? `<h3 class="page-subtitle">${pageData.subtitle}</h3>` : ''}
-  <p>${pageData.textBottom}</p>
-  ${pageData.footerText ? `<div class="page-footer-text">${pageData.footerText}</div>` : ''}
-  <div style="clear: both;"></div>
-`;
+
+    // Contenido textual
+    textDiv.innerHTML = `
+      ${pageData.title ? `<h1 class="page-title">${pageData.title}</h1>` : ''}
+      <p>${pageData.textTop || ''}</p>
+      ${imagesHTML}
+      <p>${pageData.textMiddle || ''}</p>
+      ${pageData.subtitle ? `<h3 class="page-subtitle">${pageData.subtitle}</h3>` : ''}
+      <p>${pageData.textBottom || ''}</p>
+      ${pageData.footerText ? `<div class="page-footer-text">${pageData.footerText}</div>` : ''}
+      <div style="clear: both;"></div>
+    `;
 
     page.appendChild(textDiv);
   }
@@ -293,7 +289,7 @@ if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
   book.appendChild(page);
 }
 
-// Navegacion por click/touch
+// Navegación por click/touch
 book.addEventListener('click', (e) => {
   const x = e.clientX || e.touches?.[0]?.clientX;
   if (x < window.innerWidth / 2) {
@@ -303,7 +299,7 @@ book.addEventListener('click', (e) => {
   }
 });
 
-// Cambio de pagina
+// Cambio de página
 function goToPage(delta) {
   const nextPage = currentPage + delta;
   if (nextPage >= 0 && nextPage < pages.length) {
@@ -312,7 +308,7 @@ function goToPage(delta) {
   }
 }
 
-// Cargar primera pagina
+// Cargar primera página
 renderPage(currentPage);
 
 // Mostrar modal al cargar
@@ -326,11 +322,9 @@ window.addEventListener('load', () => {
     modal.style.display = 'none';
   };
 
-  // Cerrar si se hace clic fuera del contenido
   window.onclick = (event) => {
     if (event.target == modal) {
       modal.style.display = 'none';
     }
   };
 });
-
