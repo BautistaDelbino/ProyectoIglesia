@@ -226,36 +226,47 @@ body, html {
   50% { opacity: 1; }
 }
 
-/* === MAPA y BOTONES CONTRATAPA === */
+/* === NUEVO DISEÑO CONTRATAPA === */
 .footer-content-container {
   position: absolute;
-  bottom: 90px;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 360px;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.map-image-container {
+  display: flex;
+  justify-content: center;
+  width: 37%;
+  margin-top: 280px;
 }
 
 .map-image-container img {
-  width: 45%;
-  max-width: 150px;
+  width: 100%;
+  max-width: 220px;
   height: auto;
   border-radius: 10px;
-  margin: 0 auto;
-  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .extra-buttons-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 35px;
+  gap: 24px;
 }
 
 .extra-button img {
-  width: 30px;
+  width: 50px;
   height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -301,12 +312,13 @@ body, html {
   }
 
   .footer-content-container {
-    bottom: 20px;
+    top: 20%;
     max-width: 90%;
+    gap: 1.5rem;
   }
 
   .map-image-container img {
-    max-width: 120px;
+    max-width: 160px;
   }
 
   .extra-buttons-container {
@@ -314,7 +326,7 @@ body, html {
   }
 
   .extra-button img {
-    width: 32px;
+    width: 40px;
   }
 }
 
@@ -351,22 +363,5 @@ body, html {
   .header-col.right,
   .footer-col.right {
     text-align: right;
-  }
-}
-
-/* Dispositivos grandes */
-@media (min-width: 769px) {
-  #book {
-    width: 90vw;
-    height: 85vh;
-  }
-
-  .page .content {
-    font-size: 1.1rem;
-  }
-
-  .content img.float-left,
-  .content img.float-right {
-    max-width: 45%;
   }
 }

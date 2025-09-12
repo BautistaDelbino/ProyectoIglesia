@@ -189,61 +189,62 @@ function renderPage(index) {
   page.classList.add('page', 'page-transition');
 
   // Si es una página con imagen completa de fondo (como tapa o contratapa)
-  if (pageData.fullImage && pageData.backgroundClass) {
-    page.classList.add(pageData.backgroundClass);
+if (pageData.fullImage && pageData.backgroundClass) {
+  page.classList.add(pageData.backgroundClass);
 
-    const wrapper = document.createElement('div');
-    wrapper.style.height = '100%';
-    wrapper.style.width = '100%';
-    wrapper.style.position = 'relative';
+  const wrapper = document.createElement('div');
+  wrapper.style.height = '100%';
+  wrapper.style.width = '100%';
+  wrapper.style.position = 'relative';
 
-    // --- CONTRATAPA: Mapa y botones ---
-    if (pageData.footerImage) {
-      const container = document.createElement('div');
-      container.className = 'footer-content-container';
+  // --- CONTRATAPA: Mapa y botones ---
+  if (pageData.footerImage) {
+    const container = document.createElement('div');
+    container.className = 'footer-content-container';
 
-      // Mapa
-      const mapContainer = document.createElement('div');
-      mapContainer.className = 'map-image-container';
+    // Mapa centrado
+    const mapContainer = document.createElement('div');
+    mapContainer.className = 'map-image-container';
 
-      const mapLink = document.createElement('a');
-      mapLink.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
-      mapLink.target = '_blank';
+    const mapLink = document.createElement('a');
+    mapLink.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
+    mapLink.target = '_blank';
 
-      const footerImg = document.createElement('img');
-      footerImg.src = pageData.footerImage;
-      footerImg.alt = "Ubicación en el mapa";
+    const footerImg = document.createElement('img');
+    footerImg.src = pageData.footerImage;
+    footerImg.alt = "Ubicación en el mapa";
 
-      mapLink.appendChild(footerImg);
-      mapContainer.appendChild(mapLink);
+    mapLink.appendChild(footerImg);
+    mapContainer.appendChild(mapLink);
+    container.appendChild(mapContainer);
 
-      // Botones extra
-      const buttonsContainer = document.createElement('div');
-      buttonsContainer.className = 'extra-buttons-container';
+    // Botones fijos al fondo
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'extra-buttons-container';
 
-      if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
-        pageData.extraButtons.forEach(btn => {
-          const buttonLink = document.createElement('a');
-          buttonLink.href = btn.url;
-          buttonLink.target = '_blank';
-          buttonLink.className = 'extra-button';
+    if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
+      pageData.extraButtons.forEach(btn => {
+        const buttonLink = document.createElement('a');
+        buttonLink.href = btn.url;
+        buttonLink.target = '_blank';
+        buttonLink.className = 'extra-button';
 
-          const img = document.createElement('img');
-          img.src = btn.imgSrc;
-          img.alt = "Botón extra";
+        const img = document.createElement('img');
+        img.src = btn.imgSrc;
+        img.alt = "Botón extra";
 
-          buttonLink.appendChild(img);
-          buttonsContainer.appendChild(buttonLink);
-        });
-      }
-
-      container.appendChild(mapContainer);
-      container.appendChild(buttonsContainer);
-      wrapper.appendChild(container);
+        buttonLink.appendChild(img);
+        buttonsContainer.appendChild(buttonLink);
+      });
     }
 
-    page.appendChild(wrapper);
-  } else {
+    wrapper.appendChild(container);
+    wrapper.appendChild(buttonsContainer);
+  }
+
+  page.appendChild(wrapper);
+}
+  else {
     // Páginas con contenido
     page.style.backgroundColor = pageData.bgColor || '#fff';
 
