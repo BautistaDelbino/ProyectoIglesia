@@ -24,10 +24,10 @@ const pages = [
 
   //Pagina 2
   {
-  image1Side: 'left',
-  image1: 'img/casa.jpeg',
+  image1Side: 'center',
+  image1: 'img/templo.jpeg',
   image1Width: '100%',
-  image2Side: 'right',
+  image2Side: '',
   image2: '',
   title: 'El Templo',
     textTop: 'Se levanta la construcción en tiempo récord. Este Templo humilde, levantado con dedicación, entusiasmo y alegría, fue el guardián de la Palabra del Señor y el lugar al que concurrían las familias para dar testimonio de su fe y renovar sus esperanzas',
@@ -53,18 +53,31 @@ const pages = [
 {
     image1Side: 'left',
     image1: 'img/campanario.jpeg',
-    image1Width: '40%',
+    image1Width: '70%',
     image2Side: 'right',
     image2: '',
-    image2Width: '40%',
+    image2Width: '60%',
     title: 'Campanario',
     textTop: 'El Culto de inauguración fue el día 23 de octubre de 1938. La nueva iglesia tiene campanario pero no tiene campanas. Es entonces que comienza un largo trámite que duraria nada menos que 10 años para adquirir las mismas. ',
-    textMiddle: 'Se reciben aportes de la Comunidad Evangélica de Esperanza y la Comisión de Fomento Local, para la compra de las 3 campanas, Esperanza, Fé y Caridad. Con la venta de los materiales de la demolición del Antiguo Templo, se cubre la deuda total, demostrando así que "nada se pierde todo se transforma" La energía de paredes y techos, las risas, cantos y llantos de que estaban impregnados, no se fueron con los carros que llevaban los productos de la demolición, sino que quedaron acá para siempre en estos testigos musicales que dan sus notas al aire, diciendo "somos aquellos que fuimos y seremos en la historia y el recuerdo". El 12 de noviembre de 1950 fueron consagradas las campanas. En mayo de 1959, se radica el primer pastor, señor Otto Vohringer con su familia.',
+    textMiddle: 'Se reciben aportes de la Comunidad Evangélica de Esperanza y la Comisión de Fomento Local, para la compra de las 3 campanas, Esperanza, Fé y Caridad. Con la venta de los materiales de la demolición del Antiguo Templo, se cubre la deuda total, demostrando así que "nada se pierde todo se transforma".',
     textBottom: '',
   },
   // Pagina 5
 {
-    image1Side: 'left',
+    image1Side: 'center',
+    image1: 'img/campanario22.jpg',
+    image1Width: '100%',
+    image2Side: '',
+    image2: '',
+    image2Width: '',
+    title: 'Campanario',
+    textTop: 'La energía de paredes y techos, las risas, cantos y llantos que estaban impregnados, no se fueron con los carros que llevaban los productos de la demolición sino que quedaron acá para siempre en estos testigos musicales que dan sus notas al aire, diciendo "somos aquellos que fuimos y seremos en la historia y el recuerdo".',
+    textMiddle: '',
+    textBottom: 'El 12 de noviembre de 1950 fueron consagradas las campanas. En mayo de 1959, se radica el primer pastor, señor Otto Vohringer con su familia.',
+  },
+  // Pagina 6
+{
+    image1Side: 'center',
     image1: 'img/damas.jpeg',
     image1Width: '100%',
     image2Side: 'right',
@@ -72,11 +85,25 @@ const pages = [
     image2Width: '40%',
     title: 'Damas Evangélicas',
     textTop: 'El 22 de marzo de 1928, se formó la primera comisión directiva de la Sociedad de Damas Evangélicas, su rol era fundamental, se preocupaban por las distintas áreas de los ministerios de la iglesia, como por ejemplo la catequesis, clases de confirmación, escuela dominical, Coro de la Iglesia, escuela de alemán.',
-    textMiddle: 'Ellas eran quienes recaudaban fondos para cubrir gastos, además para el sostenimiento de la iglesia y mantenimiento de las instalaciones. La sociedad de Damas, junto con la familia del pastor Johan Vöhringer, celebraron Navidad y en ese culto fue la primera Fiesta del Arbolito, que hasta la actualidad se sigue con la tradición de adornar un árbol natural.',
-    textBottom: 'Uno de sus grandes anhelos fue construir un espacio para reuniones y demás actividades relacionadas con la iglesia. El 8 de julio de 1988, recordando el primer Centenario de la Comunidad Evangélica, se inauguró el salón parroquial',
+    textMiddle: 'Ellas eran quienes recaudaban fondos para cubrir gastos, además para el sostenimiento de la iglesia y mantenimiento de las instalaciones.',
+    textBottom: '',
     footerText: '',
   },
-  // Pagina 6
+  // Pagina 7
+{
+    image1Side: 'center',
+    image1: 'img/damas2.jpeg',
+    image1Width: '100%',
+    image2Side: 'right',
+    image2: '',
+    image2Width: '40%',
+    title: 'Damas Evangélicas',
+    textTop: ' La sociedad de Damas, junto con la familia del pastor Johan Vöhringer, celebraron Navidad y en ese culto fue la primera Fiesta del Arbolito, que hasta la actualidad se sigue con la tradición de adornar un árbol natural.',
+    textMiddle: 'Uno de sus grandes anhelos fue construir un espacio para reuniones y demás actividades relacionadas con la iglesia. El 8 de julio de 1988, recordando el primer Centenario de la Comunidad Evangélica, se inauguró el salón parroquial',
+    textBottom: '',
+    footerText: '',
+  },
+  // Pagina 8
 {
     image1Side: 'left',
     image1: 'img/escuela.jpeg',
@@ -90,7 +117,7 @@ const pages = [
     textBottom: '',
     footerText: '',
   },
-  // Pagina 7
+  // Pagina 9
 {
     image1Side: 'left',
     image1: 'img/diaconia.jpeg',
@@ -104,18 +131,18 @@ const pages = [
     textBottom: 'Damos gracias a Dios por el amor hacia el prójimo el cual es el mensaje de nuestro Señor Jesucristo.',
     footerText: '',
   },
-  // Pagina 8
+  // Pagina 10
 {
-    image1Side: 'right',
-    image1: 'img/Casita Nazareth.jpeg',
-    image1Width: '80%',
-    image2Side: 'left',
-    image2: 'img/colashnenes.jpeg',
+    image1Side: '',
+    image1: '',
+    image1Width: '',
+    image2Side: 'center',
+    image2: 'img/nenes.png',
     image2Width: '100%',
     title: 'Casita Nazareth',
-    textTop: ' En ella se realizan las actividades de Escuelita Bíblica los días sábados y luego se destina a un proyecto que comenzó a funcionar en Noviembre del 2024 ofreciendo talleres gratuitos para niños de edad escolar que tienen alguna dificultad de participar en actividades extra escolares, y facilitar así, la socialización y el desarrollo de su estima.',
+    textTop: 'En ella se realizan las actividades de Escuelita Bíblica los días sábados y luego se destina a un proyecto que comenzó a funcionar en Noviembre del 2024',
     textMiddle: '',
-    textBottom: 'Para ello se les brindan talleres como Juegoteca, Huerta y Jardín, Cocina, Música y Manualidades.',
+    textBottom: 'Ofreciendo talleres gratuitos para niños de edad escolar que tienen alguna dificultad de participar en actividades extra escolares, y facilitar así, la socialización y el desarrollo de su estima. Para ello se les brindan talleres como Juegoteca, Huerta y Jardín, Cocina, Música y Manualidades.',
   },
   // CONTRATAPA
 
