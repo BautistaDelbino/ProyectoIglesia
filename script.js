@@ -107,10 +107,10 @@ const pages = [
 {
     image1Side: 'left',
     image1: 'img/escuela.jpeg',
-    image1Width: '50%',
+    image1Width: '100%',
     image2Side: 'right',
     image2: 'img/escuela2.jpeg',
-    image2Width: '45%',
+    image2Width: '100%',
     title: 'Escuelita Bíblica',
     textTop: 'La educación cristiana es uno de los pilares importantes para el crecimiento de la fe. Un espacio dedicado a nuestros pequeños y adolescentes. Con ellos compartimos encuentros semanales, donde después de cantos, oraciones, ofrendas, se los divide por edades para aprender de las historias bíblicas como así también distintos temas que tienen que ver con la vida cotidiana.',
     textMiddle: 'Ellos participan de encuentros, campamentos y cultos especiales. Estamos llamados a compartir la fe de generación en generación y así cumplir con el mandato de nuestro señor Jesús.',
@@ -168,90 +168,83 @@ const book = document.getElementById('book');
 // Precargar imágenes
 const preloadImages = () => {
   pages.forEach(page => {
-    if (page.image1) {
-      const img1 = new Image();
-      img1.src = page.image1;
-    }
-    if (page.image2) {
-      const img2 = new Image();
-      img2.src = page.image2;
-    }
+    if (page.image1) new Image().src = page.image1;
+    if (page.image2) new Image().src = page.image2;
   });
 };
 preloadImages();
 
-// Renderizar pagina actual
+// Renderizar página actual
 function renderPage(index) {
-  book.innerHTML = ''; // Limpiar contenido
+  book.innerHTML = '';
 
   const pageData = pages[index];
   const page = document.createElement('div');
   page.classList.add('page', 'page-transition');
 
-  // Si es una página con imagen completa de fondo (como tapa o contratapa)
-if (pageData.fullImage && pageData.backgroundClass) {
-  page.classList.add(pageData.backgroundClass);
+  // Si es tapa o contratapa
+  if (pageData.fullImage && pageData.backgroundClass) {
+    page.classList.add(pageData.backgroundClass);
 
-  const wrapper = document.createElement('div');
-  wrapper.style.height = '100%';
-  wrapper.style.width = '100%';
-  wrapper.style.position = 'relative';
+    const wrapper = document.createElement('div');
+    wrapper.style.height = '100%';
+    wrapper.style.width = '100%';
+    wrapper.style.position = 'relative';
 
-  // --- CONTRATAPA: Mapa y botones ---
-  if (pageData.footerImage) {
-    const container = document.createElement('div');
-    container.className = 'footer-content-container';
+    // --- CONTRATAPA: Mapa + botones ---
+    if (pageData.footerImage) {
+      const container = document.createElement('div');
+      container.className = 'footer-content-container';
 
-    // Mapa centrado
-    const mapContainer = document.createElement('div');
-    mapContainer.className = 'map-image-container';
+      // Mapa centrado
+      const mapContainer = document.createElement('div');
+      mapContainer.className = 'map-image-container map-separation';
 
-    const mapLink = document.createElement('a');
-    mapLink.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
-    mapLink.target = '_blank';
+      const mapLink = document.createElement('a');
+      mapLink.href = 'https://maps.app.goo.gl/1B7wxEM5rENRSRh29';
+      mapLink.target = '_blank';
 
-    const footerImg = document.createElement('img');
-    footerImg.src = pageData.footerImage;
-    footerImg.alt = "Ubicación en el mapa";
+      const footerImg = document.createElement('img');
+      footerImg.src = pageData.footerImage;
+      footerImg.alt = "Ubicación en el mapa";
 
-    mapLink.appendChild(footerImg);
-    mapContainer.appendChild(mapLink);
-    container.appendChild(mapContainer);
+      mapLink.appendChild(footerImg);
+      mapContainer.appendChild(mapLink);
+      container.appendChild(mapContainer);
 
-    // Botones fijos al fondo
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'extra-buttons-container';
+      // Botones extras
+      const buttonsContainer = document.createElement('div');
+      buttonsContainer.className = 'extra-buttons-container';
 
-    if (pageData.extraButtons && Array.isArray(pageData.extraButtons)) {
-      pageData.extraButtons.forEach(btn => {
-        const buttonLink = document.createElement('a');
-        buttonLink.href = btn.url;
-        buttonLink.target = '_blank';
-        buttonLink.className = 'extra-button';
+      if (Array.isArray(pageData.extraButtons)) {
+        pageData.extraButtons.forEach(btn => {
+          const buttonLink = document.createElement('a');
+          buttonLink.href = btn.url;
+          buttonLink.target = '_blank';
+          buttonLink.className = 'extra-button';
 
-        const img = document.createElement('img');
-        img.src = btn.imgSrc;
-        img.alt = "Botón extra";
+          const img = document.createElement('img');
+          img.src = btn.imgSrc;
+          img.alt = "Botón extra";
 
-        buttonLink.appendChild(img);
-        buttonsContainer.appendChild(buttonLink);
-      });
+          buttonLink.appendChild(img);
+          buttonsContainer.appendChild(buttonLink);
+        });
+      }
+
+      wrapper.appendChild(container);
+      wrapper.appendChild(buttonsContainer);
     }
 
-    wrapper.appendChild(container);
-    wrapper.appendChild(buttonsContainer);
-  }
-
-  page.appendChild(wrapper);
-}
-  else {
-    // Páginas con contenido
+    page.appendChild(wrapper);
+  } else {
+    // Páginas normales con contenido
     page.style.backgroundColor = pageData.bgColor || '#fff';
 
     const textDiv = document.createElement('div');
     textDiv.className = 'content';
 
-    // Imágenes dentro de contenido
+    // Imágenes
     let imagesHTML = '';
     if (pageData.image1) {
       imagesHTML += `
@@ -272,7 +265,7 @@ if (pageData.fullImage && pageData.backgroundClass) {
       `;
     }
 
-    // Contenido textual
+    // Texto
     textDiv.innerHTML = `
       ${pageData.title ? `<h1 class="page-title">${pageData.title}</h1>` : ''}
       <p>${pageData.textTop || ''}</p>
@@ -290,7 +283,7 @@ if (pageData.fullImage && pageData.backgroundClass) {
   book.appendChild(page);
 }
 
-// Navegación por click/touch
+// Navegación
 book.addEventListener('click', (e) => {
   const x = e.clientX || e.touches?.[0]?.clientX;
   if (x < window.innerWidth / 2) {
@@ -300,7 +293,6 @@ book.addEventListener('click', (e) => {
   }
 });
 
-// Cambio de página
 function goToPage(delta) {
   const nextPage = currentPage + delta;
   if (nextPage >= 0 && nextPage < pages.length) {
@@ -312,20 +304,15 @@ function goToPage(delta) {
 // Cargar primera página
 renderPage(currentPage);
 
-// Mostrar modal al cargar
+// Modal
 window.addEventListener('load', () => {
   const modal = document.getElementById('tutorialModal');
   const closeBtn = document.getElementById('closeModal');
 
   modal.style.display = 'flex';
-
-  closeBtn.onclick = () => {
-    modal.style.display = 'none';
-  };
+  closeBtn.onclick = () => { modal.style.display = 'none'; };
 
   window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
+    if (event.target == modal) modal.style.display = 'none';
   };
 });

@@ -1,11 +1,7 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Fuente general */
+/* General */
 body, html {
   width: 100%;
   height: 100%;
@@ -15,7 +11,7 @@ body, html {
   color: black;
 }
 
-/* Contenedor del libro */
+/* Contenedor libro */
 #book {
   width: 90vw;
   height: 80vh;
@@ -27,7 +23,7 @@ body, html {
   touch-action: manipulation;
 }
 
-/* Página base */
+/* Páginas */
 .page {
   width: 100%;
   height: 100%;
@@ -35,27 +31,18 @@ body, html {
   padding: 1.5rem;
   overflow-y: auto;
   border-radius: 12px;
-  display: block;
   background-image: url('img/hoja.jpeg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* Fondos especiales */
-.page.bg-tapa {
-  background-image: url('img/tapa.jpg');
-}
-.page.bg-contratapa {
-  background-image: url('img/contratapa.jpeg');
-}
-
-/* Para que no se desborden las imágenes de fondo */
-.page.bg-tapa,
-.page.bg-contratapa {
+.page.bg-tapa { background-image: url('img/tapa.jpg'); }
+.page.bg-contratapa { background-image: url('img/contratapa.jpeg'); }
+.page.bg-tapa, .page.bg-contratapa {
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
 }
 
 /* Contenido */
@@ -66,302 +53,122 @@ body, html {
 }
 .page .content p {
   margin-bottom: 1rem;
+  text-align: justify;
+  text-justify: inter-word;/* Evita espacios entre letras, distribuye entre palabras */
+  hyphens: auto;/* Corta palabras largas si es necesario */
 }
 
-.content img.float-left {
-  float: left;
-  margin: 0 1rem 1rem 0;
-  max-width: 50%;
+/* Imágenes dentro del libro */
+.content img {
   height: auto;
   border-radius: 10px;
   object-fit: contain;
-  display: inline;
+  display: inline-block;
+  max-width: 100%;
+}
+.content img.float-left {
+  float: left;
+  margin: 0 0.6rem 0.3rem 0;/*AjusteDelTextoFlotante*/
+  max-width: 50%;
 }
 
 .content img.float-right {
   float: right;
-  margin: 0 0 1rem 1rem;
+  margin: 0 0 0.3rem 0.6rem;/*AjusteDelTextoFlotante*/
   max-width: 50%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: contain;
-  display: inline;
 }
 
-.page-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #222;
-  text-align: center;
-  font-family: 'Georgia', serif;
-}
-.page-subtitle {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 35px;
-  color: #222;
-  text-align: left;
-  font-family: 'Georgia', serif;
-}
-.page-footer-text {
-  text-align: center;
-  font-size: 15px;
-  font-family: 'Georgia', serif;
-  color: #222;
-  margin-bottom: 20px;
-}
 
-/* Animación de entrada */
-.page-transition {
-  animation: slideIn 0.4s ease forwards;
-}
+
+/* Títulos */
+.page-title { font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 5px; color: #222; }
+.page-subtitle { font-size: 18px; font-weight: bold; margin-top: 35px; color: #222; }
+.page-footer-text { text-align: center; font-size: 15px; margin-bottom: 20px; }
+
+/* Animación */
+.page-transition { animation: slideIn 0.4s ease forwards; }
 @keyframes slideIn {
-  from {
-    transform: translateX(70%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(70%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 /* === Modal Tutorial === */
 .modal {
-  display: flex;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  display: flex; position: fixed; z-index: 9999;
+  left: 0; top: 0; width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
+  justify-content: center; align-items: center;
 }
-
 .modal-content {
+  background-color: #bbbbbb; padding: 1.5rem; border-radius: 25px;
+  width: 90%; max-width: 340px; text-align: center;
+  position: relative; animation: fadeIn 0.4s ease-in;
   font-family: 'Montserrat', sans-serif;
-  background-color: #bbbbbb;
-  padding: 1.5rem;
-  border-radius: 25px;
-  width: 90%;
-  max-width: 340px;
-  text-align: center;
-  position: relative;
-  animation: fadeIn 0.4s ease-in;
 }
+.close { position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.tutorial-phone { width: 200px; height: 400px; margin: 1rem auto; border-radius: 20px; background: #222; display: flex; }
+.half { width: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; }
+.left {background-color: rgba(255,255,255,0.3); }
+.right { background-color: rgba(180,180,180,0.7); }
+.scroll-hint { margin-top: 10px; font-size: 16px; color: #000; animation: blink 1s infinite; }
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.9);} to { opacity: 1; transform: scale(1);} }
+@keyframes blink { 0%,100%{opacity:.5;} 50%{opacity:1;} }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.tutorial-phone {
-  position: relative;
-  width: 200px;
-  height: 400px;
-  margin: 1rem auto;
-  border-radius: 20px;
-  background: #222;
-  overflow: hidden;
-  display: flex;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-/*--- TEXTO MODAL ---*/
-.half {
-  font-family: 'Montserrat', sans-serif;
-  width: 50%;
-  height: 100%;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  padding: 10px;
-}
-
-/* MITAD IZQUIERDA */
-.left {
-  background-color: rgba(255, 255, 255, 0.315);
-}
-
-/* MITAD DERECHA */
-.right {
-  background-color: rgba(180, 180, 180, 0.671);
-}
-
-/* Texto deslizar */
-.scroll-hint {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #000000;
-  animation: blink 1s infinite;
-}
-
-/* Explicación */
-.tutorial-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  color: #000000;
-  padding: 8px;
-  margin-top: 0.5rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-/* === NUEVO DISEÑO CONTRATAPA === */
+/* === CONTRATAPA === */
 .footer-content-container {
   position: absolute;
-  top: 25%;
+  bottom: 68px; /* espacio para los botones */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 360px;
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
 }
-
-.map-image-container {
-  display: flex;
-  justify-content: center;
-  width: 37%;
-  margin-top: 280px;
-}
-
+.map-image-container { display: flex; justify-content: center; width: 100%; }
 .map-image-container img {
-  width: 100%;
-  max-width: 220px;
+  width: 25vw;/* ocupa 25% del ancho de la pantalla */
+  max-width: 120px;
+  min-width: 70px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+/* Línea de separación mapa-botones */
+.map-separation { margin-bottom: 0px; }
 
+/* Botones extras */
 .extra-buttons-container {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 24px;
+  position: fixed;
+  bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; justify-content: center; gap: 70px;
 }
-
 .extra-button img {
-  width: 50px;
+  width: 10vw;/* 10% del ancho de la pantalla */
+  max-width: 40px;
+  min-width: 25px;
   height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
+.extra-button img:hover { transform: scale(1.1); }
 
-.extra-button img:hover {
-  transform: scale(1.1);
-}
-
-/* === MEDIA QUERIES === */
-
-/* Dispositivos pequeños */
-@media (max-width: 365px) {
-  #book {
-    width: 98vw;
-    height: 80vh;
-    margin: 1rem auto;
-  }
-
-  .page .content {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .content img.float-left,
-  .content img.float-right {
-    float: none;
-    display: block;
-    max-width: 100%;
-    margin: 0 auto 1rem auto;
-  }
-
-  .header-container,
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-col,
-  .footer-col {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-content-container {
-    top: 20%;
-    max-width: 90%;
-    gap: 1.5rem;
-  }
-
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
   .map-image-container img {
+    width: 40vw;
     max-width: 160px;
-  }
-
-  .extra-buttons-container {
-    gap: 16px;
+    min-width: 100px;
   }
 
   .extra-button img {
-    width: 40px;
+    width: 12vw;
+    max-width: 50px;
+    min-width: 30px;
   }
-}
-
-/* Dispositivos medianos */
-@media (min-width: 481px) and (max-width: 768px) {
-  #book {
-    width: 95vw;
-    height: 80vh;
-    margin: 2rem auto;
-  }
-
-  .page .content {
-    font-size: 1rem;
-  }
-
-  .content img.float-left,
-  .content img.float-right {
-    max-width: 60%;
-  }
-
-  .header-container,
-  .footer-container {
-    flex-direction: row;
-  }
-
-  .header-col.left,
-  .footer-col.left {
-    text-align: left;
-  }
-  .header-col.center,
-  .footer-col.center {
-    text-align: center;
-  }
-  .header-col.right,
-  .footer-col.right {
-    text-align: right;
+  .map-image-container img{
+    width: 32vw;
+    max-width: 120px;
+    min-width: 120px;
   }
 }
