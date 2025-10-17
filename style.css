@@ -129,8 +129,6 @@ body, html {
 .map-image-container {
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin-bottom: 4.5vh;
 }
 
 .map-image-container img {
@@ -172,20 +170,25 @@ body, html {
 /* 📱 Teléfonos muy chicos (hasta 360px) */
 @media (max-width: 360px) {
 
+  .map-image-container{
+    width: 100%;
+    margin-bottom: 13vh;
+  }
+
   .map-image-container img {
-    width: 30vw;
+    width: 40vw;
     max-width: 140px;
     min-width: 90px;
   }
 
   .extra-buttons-container {
-    gap: 12vw;
-    bottom: 9%;
+    gap: 18vw;
+    bottom: 15%;
   }
 
   .extra-button img {
-    width: 18vw;
-    max-width: 45px;
+    width: 12vw;
+    max-width: 35px;
   }
 }
 
@@ -193,6 +196,10 @@ body, html {
 /* 📱 Teléfonos chicos (361px a 480px) */
 @media (min-width: 361px) and (max-width: 480px) {
   
+  .map-image-container{
+    width: 100%;
+    margin-bottom: 13vh;
+  }
   .map-image-container img {
     width: 45vw;
     max-width: 140px;
@@ -200,7 +207,7 @@ body, html {
 
   .extra-buttons-container {
     gap: 20vw;
-    bottom: 5%;
+    bottom: 18%;
   }
 
   .extra-button img {
@@ -211,18 +218,23 @@ body, html {
 
 /* 📱 Teléfonos medianos (481px a 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
+
+  .map-image-container{
+    width: 100%;
+    margin-bottom: 11vh;
+  }
   .map-image-container img {
     width: 38vw;
     max-width: 145px;
   }
 
   .extra-buttons-container {
-    gap: 9vw;
-    bottom: 4%;
+    gap: 18vw;
+    bottom: 12%;
   }
 
   .extra-button img {
-    width: 50px;
+    width: 12vw;
     max-width: 45px;
   }
 }
